@@ -37,20 +37,20 @@ class MessageController extends Controller
         }
 
         switch ($result) {
-            case -1:    return response('账号未注册', 400);
-            case -2:    return response('网络访问超时,请重试', 400);
-            case -3:    return response('密码错误', 400);
-            case -4:    return response('余额不足', 400);
-            case -5:    return response('定时发送时间不是有效的时间格式', 400);
-            case -6:    return response('提交信息末尾未加签名，请添加中文企业签名【 】', 400);
-            case -7:    return response('发送内容需在1到300个字之间', 400);
-            case -8:    return reponse('发送号码为空', 400);
-            case -9:    return response('定时时间不能小于系统当前时间', 400);
-            case -100:  return response('IP黑名单', 400);
-            case -102:  return response('账号黑名单', 400);
-            case -103:  return response('IP未导白', 400);
-            case 0:     return response('error', 400);
-            default:    return response('短信发送成功', 201);
+            case -1:    return response()->json('账号未注册', 400);
+            case -2:    return response()->json('网络访问超时,请重试', 400);
+            case -3:    return response()->json('密码错误', 400);
+            case -4:    return response()->json('余额不足', 400);
+            case -5:    return response()->json('定时发送时间不是有效的时间格式', 400);
+            case -6:    return response()->json('提交信息末尾未加签名，请添加中文企业签名【 】', 400);
+            case -7:    return response()->json('发送内容需在1到300个字之间', 400);
+            case -8:    return response()->json('发送号码为空', 400);
+            case -9:    return response()->json('定时时间不能小于系统当前时间', 400);
+            case -100:  return response()->json('IP黑名单', 400);
+            case -102:  return response()->json('账号黑名单', 400);
+            case -103:  return response()->json('IP未导白', 400);
+            case 0:     return response()->json('error', 400);
+            default:    return response()->json('短信发送成功', 201);
         }
     }   
 }
