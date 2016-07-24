@@ -9,8 +9,8 @@ RUN /bin/chown www-data:www-data -R /var/www/html/storage /var/www/html/bootstra
 EXPOSE 80
 EXPOSE 443
 
-ADD init.sh /init.sh
-RUN chmod 777 /init.sh
-RUN copy -f .env.example .env
+ADD init.sh init.sh
+RUN chmod +x init.sh
+COPY .env.example .env
 
-CMD ["/init.sh"]
+CMD ["./init.sh"]
